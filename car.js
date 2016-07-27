@@ -2,6 +2,7 @@
 
 var Car = function (mpg) {
   this.gallons = 0;
+  this.mpg = mpg;
   this.totalMiles = 0;
   this.allTrips = [];
 };
@@ -16,7 +17,7 @@ Car.prototype.fill = function (gallons) {
 };
 
 Car.prototype.drive = function(miles) {
-  this.gallons = this.gallons - (miles/10);
+  this.gallons = this.gallons - (miles/this.mpg);
   this.totalMiles += miles;
   this.allTrips.push(miles + " miles");
 };
